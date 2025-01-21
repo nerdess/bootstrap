@@ -395,15 +395,10 @@ class Dropdown extends BaseComponent {
     // If not an UP | DOWN | ESCAPE key => not a dropdown command
     // If input/textarea && if key is other than ESCAPE => not a dropdown command
 
-    const isInput = /input|textarea/i.test(event.target.tagName)
     const isEscapeEvent = event.key === ESCAPE_KEY
     const isUpOrDownEvent = [ARROW_UP_KEY, ARROW_DOWN_KEY].includes(event.key)
 
     if (!isUpOrDownEvent && !isEscapeEvent) {
-      return
-    }
-
-    if (isInput && !isEscapeEvent) {
       return
     }
 
